@@ -27,3 +27,14 @@ for eq in list_of_eqs:
     lats.append(lat)
 
 print (mags[:10])
+
+from plotly.graph_objs import Scattergeo,Layout
+from plotly import offline
+
+data = [Scattergeo(lon=lons,lat=lats)]
+
+my_layout = Layout(title="Global Earth Quakes")
+
+fig = {'data':data,'layout':my_layout}
+
+offline.plot(fig,filename='global_eq.html')
