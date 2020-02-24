@@ -8,7 +8,7 @@ from plotly import offline
 
 def main():
         
-    filenames=["MODIS_C6_Australia_NewZealand_MCD14DL_NRT_2019331.csv","MODIS_C6_Australia_NewZealand_MCD14DL_NRT_2020026.csv"]          
+    filenames=["MODIS_C6_Australia_NewZealand_MCD14DL_NRT_2019331.txt","MODIS_C6_Australia_NewZealand_MCD14DL_NRT_2020026.txt"]          
     map_title =['Australian Fires-November 2019','Australian Fires-January 2020']
     i=0
     for file in filenames:
@@ -41,15 +41,15 @@ def fileplot(N):
             lats.append(lat)
             bright.append(brit)
     open_file.close() 
-    return longs,lats,brits
+    return longs,lats,bright
 
 
-def tee (a,b,c,CC):                             
+def tee (X,Y,Z,CC):                             
     
     from plotly.graph_objs import Scattergeo, Layout
     from plotly import offline
-    data =[dict(type='scattergeo',lon=a,lat=b, mode = 'markers', marker = dict(size = 30,colorscale= 'reds', 
-    color = c, colorbar = dict(title = 'Brightness',titleside = 'top',tickmode = 'array',)))]
+    data =[dict(type='scattergeo',lon=X,lat=Y, mode = 'markers', marker = dict(size = 30,colorscale= 'reds', 
+    color = Z, colorbar = dict(title = 'Brightness',titleside = 'top',tickmode = 'array',)))]
 
     layout = dict(title = CC,geo = dict(showland = True, lataxis = dict(range=[-38.798,-10.154]),
     lonaxis = dict(range=[112.804,155.329]),landcolor = "rgb(250, 250, 250)",subunitcolor = "rgb(217, 217, 217)",
