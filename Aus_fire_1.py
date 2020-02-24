@@ -8,7 +8,7 @@ from plotly import offline
 
 def main():
         
-    filenames=["MODIS_C6_Australia_NewZealand_MCD14DL_NRT_2019331.txt","MODIS_C6_Australia_NewZealand_MCD14DL_NRT_2020026.txt"]          
+    filenames=["D:\ADV Python\JSON\JSON-Project\MODIS_C6_Australia_NewZealand_MCD14DL_NRT_2019331.txt","D:\ADV Python\JSON\JSON-Project\MODIS_C6_Australia_NewZealand_MCD14DL_NRT_2020026.txt"]          
     map_title =['Australian Fires-November 2019','Australian Fires-January 2020']
     i=0
     for file in filenames:
